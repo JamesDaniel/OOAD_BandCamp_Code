@@ -13,29 +13,22 @@ import java.util.Set;
  * @author SoftwareDev
  */
 public class MemberInventory {
-    private List<Member> Members;
+    private List<Member> members;
 
     public MemberInventory(){
 
     }
     public void addMember(String name)
     {
-        // int id = this.getNewId();
-        // need code to add a member to inventory list
+        int id = this.getNewId();
+        members.add(new Member(id ,name));
     }
     public Member getMember(int id)
     {
-        // need code to get a member from inventory list
-        return null;
-    }
-    public Member SearchForMember(String name)
-    {
-        // need code to search for and return a song from inventory list
-        return null;
+        return members.get(id);
     }
     public int getNewId(){
-        // need code to get the new id for a new member
-        return 0;
+        return members.size()+1;
     }
 
 

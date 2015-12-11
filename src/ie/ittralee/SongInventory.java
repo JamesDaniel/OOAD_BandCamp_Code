@@ -13,20 +13,19 @@ import java.util.Set;
  * @author SoftwareDev
  */
 public class SongInventory {
-    private List<Song> Songs;
+    private List<Song> songs;
 
     public SongInventory(){
 
     }
-    public void addSong(String title, Member member, Set<Genre> genre)
+    public void addSong(String title, Set<Genre> genre)
     {
-        // int id = this.getNewId();
-        // need code to add a song to inventory list
+        int id = this.getNewId();
+        songs.add(new Song(id , title, genre));
     }
     public Song getSong(int id)
     {
-        // need code to get a song from inventory list
-        return null;
+        return songs.get(id);
     }
     public Song SearchForSong(String title, Genre genre)
     {
@@ -34,7 +33,6 @@ public class SongInventory {
         return null;
     }
     public int getNewId(){
-        // need code to get the new id for a new song
-        return 0;
+        return songs.size()+1;
     }
 }

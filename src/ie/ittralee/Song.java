@@ -11,13 +11,11 @@ import java.util.Set;
 public class Song implements Comparable<Song>{
     private int id;
     private String title;
-    private Member member;
     private Set<Genre> genre;
 
-    public Song(int id, String title, Member member, Set<Genre> genre) {
+    public Song(int id, String title, Set<Genre> genre) {
         this.id = id;
         this.title = title;
-        this.member = member;
         this.genre = genre;
     }
     public int compareTo(Song otherSong){
@@ -54,19 +52,7 @@ public class Song implements Comparable<Song>{
         this.title = title;
     }
 
-    /**
-     * @return the member
-     */
-    public Member getMember() {
-        return member;
-    }
 
-    /**
-     * @param member the member to set
-     */
-    public void setMember(Member member) {
-        this.member = member;
-    }
 
     /**
      * @return the genre

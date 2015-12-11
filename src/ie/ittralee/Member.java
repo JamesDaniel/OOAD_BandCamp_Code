@@ -5,17 +5,25 @@
  */
 package ie.ittralee;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author SoftwareDev
  */
 public class Member{
+
+
     private int id;
     private String name;
+    List<Song> songsByMember;
+
 
     public Member(int id, String name) {
         this.id = id;
         this.name = name;
+        this.songsByMember = new ArrayList<Song>();
     }
     @Override
     public String toString(){
@@ -50,5 +58,15 @@ public class Member{
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * @param s the song to add to List
+     */
+    public void uploadSong(Song s, SongInventory si)
+    {
+        //Song s = new Song()
+        songsByMember.add(s);
+        //SongInventory.add(s);
     }
 }

@@ -15,58 +15,49 @@ import java.util.List;
 public class Member{
 
 
-    private int id;
-    private String name;
-    List<Song> songsByMember;
+    private int memId;
+    private String memberName;
 
 
-    public Member(int id, String name) {
-        this.id = id;
-        this.name = name;
-        this.songsByMember = new ArrayList<Song>();
+    public Member(int memId, String memberName) {
+        this.memId = memId;
+        this.memberName = memberName;
     }
+
+
     @Override
     public String toString(){
-        return "\nID: " + id +
-               "\nName: " + name;
+        return "\nID: " + memId +
+               "\nName: " + memberName;
     }
 
 
     /**
-     * @return the id
+     * @return the memId
      */
-    public int getId() {
-        return id;
+    public int getMemId() {
+        return memId;
     }
 
     /**
-     * @param id the id to set
+     * @param memId the memId to set
      */
-    public void setId(int id) {
-        this.id = id;
+    public void setMemId(int memId) {
+        this.memId = memId;
     }
 
     /**
-     * @return the name
+     * @return the memberName
      */
-    public String getName() {
-        return name;
+    public String getMemberName() {
+        return memberName;
     }
 
     /**
-     * @param name the name to set
+     * @param memberName the memberName to set
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
     }
 
-    /**
-     * @param s the song to add to List
-     */
-    public void uploadSong(Song s, SongInventory si)
-    {
-        //Song s = new Song()
-        songsByMember.add(s);
-        //SongInventory.add(s);
-    }
 }

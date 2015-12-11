@@ -8,7 +8,7 @@ package ie.ittralee;
 import java.util.Set;
 
 
-public class Song implements Comparable<Song>{
+public class Song{
     private int id;
     private String title;
     private Set<Genre> genre;
@@ -18,10 +18,22 @@ public class Song implements Comparable<Song>{
         this.title = title;
         this.genre = genre;
     }
-    public int compareTo(Song otherSong){
-        return this.getId() > otherSong.getId() ? 1  :
-                this.getId() < otherSong.getId() ? -1 : 0;
+    @Override
+    public String toString(){
+        String genres = "";
+        for (Genre g: genre)
+        {
+            genres += " " + g.toString() + ",";
+        }
+        genres = genres.substring(0,genres.length()-1);
+
+
+        return "ID: " + id +
+               "\nTitle: " + title +
+               "\nGenres: " + genres;
+
     }
+
 
 
     /**

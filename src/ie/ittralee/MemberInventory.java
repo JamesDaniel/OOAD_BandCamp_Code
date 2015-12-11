@@ -5,6 +5,7 @@
  */
 package ie.ittralee;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -16,7 +17,7 @@ public class MemberInventory {
     private List<Member> members;
 
     public MemberInventory(){
-
+        members = new ArrayList<Member>();
     }
     public void addMember(String name)
     {

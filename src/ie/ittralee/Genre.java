@@ -14,6 +14,7 @@ public enum Genre {
     ROCK, POP, BLUES, CLASSICAL,
     PUNK, JAZZ, COUNTRY, RNB;
 
+    @Override
     public String toString() {
         switch(this){
             case ROCK: return "Rock";

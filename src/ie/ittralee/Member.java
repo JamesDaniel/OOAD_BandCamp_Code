@@ -9,7 +9,7 @@ package ie.ittralee;
  *
  * @author SoftwareDev
  */
-public class Member implements Comparable<Member>{
+public class Member{
     private int id;
     private String name;
 
@@ -17,10 +17,10 @@ public class Member implements Comparable<Member>{
         this.id = id;
         this.name = name;
     }
-    public int compareTo(Member otherMember)
-    {
-        return this.getId() > otherMember.getId() ? 1  :
-                this.getId() < otherMember.getId() ? -1 : 0;
+    @Override
+    public String toString(){
+        return "\nID: " + id +
+               "\nName: " + name;
     }
 
 

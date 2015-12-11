@@ -5,6 +5,7 @@
  */
 package ie.ittralee;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -16,23 +17,28 @@ public class SongInventory {
     private List<Song> songs;
 
     public SongInventory(){
-
+        songs = new ArrayList<Song>();
     }
-    public void addSong(String title, Set<Genre> genre)
+    public void addSong(String title, Set<Genre> genres)
     {
         int id = this.getNewId();
-        songs.add(new Song(id , title, genre));
+        songs.add(new Song(id , title, genres));
     }
     public Song getSong(int id)
     {
         return songs.get(id);
     }
-    public Song SearchForSong(String title, Genre genre)
+    public Song searchForSong(String title)
     {
-        // need code to search for and return a song from inventory list
+        for (Song song: songs)
+        {
+            if (song.getTitle().equals(title))
+                return song;
+        }
         return null;
     }
     public int getNewId(){
         return songs.size()+1;
     }
+
 }

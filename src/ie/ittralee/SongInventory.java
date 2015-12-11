@@ -1,32 +1,40 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ie.ittralee;
+
 import java.util.List;
+import java.util.Set;
 
 /**
- * Created by t00119195 on 10/12/2015.
+ *
+ * @author SoftwareDev
  */
 public class SongInventory {
-
-    private List<Song> songs;
+    private List<Song> Songs;
 
     public SongInventory(){
 
     }
-
-    public void add(String title, int memberID ){
-        songs.add(new Song(title, memberID, getNextSongID()));
+    public void addSong(String title, Member member, Set<Genre> genre)
+    {
+        // int id = this.getNewId();
+        // need code to add a song to inventory list
     }
-
-
-    public Song search(String title){
-        for(Song song: songs){
-            if(song.getTitle().equals(title)){
-                return song;
-            }
-        }
-        return null; //nothing found
+    public Song getSong(int id)
+    {
+        // need code to get a song from inventory list
+        return null;
     }
-
-    public int getNextSongID(){
-        return (songs.size() + 1);
+    public Song SearchForSong(String title, Genre genre)
+    {
+        // need code to search for and return a song from inventory list
+        return null;
+    }
+    public int getNewId(){
+        // need code to get the new id for a new song
+        return 0;
     }
 }

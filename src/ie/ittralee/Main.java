@@ -1,6 +1,8 @@
 package ie.ittralee;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Main {
@@ -21,31 +23,28 @@ public class Main {
         genres.add(Genre.ROCK);
         songLibrary.addSong("Slapping Gourgous", genres, newMember);
 
-        Song searchedSong = songLibrary.searchForSongByTitle("I'm so blue");
-        if (searchedSong == null)
-            System.out.println("Song not found.");
-        else
-            System.out.println(searchedSong.toString());
+        List<Song> searchedSong = songLibrary.searchForSongByTitle("I'm so blue");
+        displaySongs(searchedSong);
 
         searchedSong = songLibrary.searchForSongByArtistName("Nazmul Alam");
+        displaySongs(searchedSong);
+
+        searchedSong = songLibrary.searchForSong("I'm so blue", "Nazmul Alam", Genre.ROCK.toString());
+        displaySongs(searchedSong);
+
+        searchedSong = songLibrary.searchForSong("I'm so blue", "Ciaran Griffo", Genre.POP.toString());
+        displaySongs(searchedSong);
+
+    }
+
+    private static void displaySongs(List<Song> searchedSong) {
+
         if (searchedSong == null)
             System.out.println("Song not found.");
-        else
-            System.out.println(searchedSong.toString());
-
-
-        searchedSong = songLibrary.searchForSong("I'm so blue", "Nazmul Alam");
-        if (searchedSong == null)
-            System.out.println("Song not found.");
-        else
-            System.out.println(searchedSong.toString());
-
-
-        searchedSong = songLibrary.searchForSong("I'm so blue", "Ciaran Griffo");
-        if (searchedSong == null)
-            System.out.println("Song not found.");
-        else
-            System.out.println(searchedSong.toString());
+        else {
+            for (Song song : searchedSong)
+                System.out.println(song.toString());
+        }
 
     }
 }

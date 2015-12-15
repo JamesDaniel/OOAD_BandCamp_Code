@@ -27,7 +27,7 @@ public class Member{
 
     @Override
     public String toString(){
-        return "\nID: " + memId +
+        return "\nMember ID: " + memId +
                "\nName: " + memberName;
     }
 

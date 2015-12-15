@@ -10,12 +10,13 @@ import java.util.Set;
 
 public class Song{
     private int songId;
-    private String title;
+    private String songTitle;
     private Set<Genre> genre;
+    //private Member artist
 
-    public Song(int songId, String title, Set<Genre> genre) {
+    public Song(int songId, String songTitle, Set<Genre> genre) { //add artist
         this.songId = songId;
-        this.title = title;
+        this.songTitle = songTitle;
         this.genre = genre;
     }
     @Override
@@ -25,12 +26,13 @@ public class Song{
         {
             genres += " " + g.toString() + ",";
         }
+
         genres = genres.substring(0,genres.length()-1);
 
 
         return "ID: " + songId +
-               "\nTitle: " + title +
-               "\nGenres: " + genres;
+               "\nTitle: " + songTitle +
+               "\nGenres: " + genres;//add artist
 
     }
 
@@ -48,21 +50,21 @@ public class Song{
      */
     public void setSongId(int songId) {
         this.songId = songId;
+    } //o/c
+
+    /**
+     * @return the songTitle
+     */
+    public String getSongTitle() {
+        return songTitle;
     }
 
     /**
-     * @return the title
+     * @param songTitle the songTitle to set
      */
-    public String getTitle() {
-        return title;
-    }
-
-    /**
-     * @param title the title to set
-     */
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public void setSongTitle(String songTitle) {
+        this.songTitle = songTitle;
+    }//remove
 
 
 

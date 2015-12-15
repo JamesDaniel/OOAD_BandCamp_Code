@@ -28,15 +28,19 @@ public class SongLibrary {
     {
         return songs.get(id);
     }
-    public Song searchForSong(String title)
+    public Song searchForSong(String songTitle)
     {
         for (Song song: songs)
         {
-            if (song.getTitle().equals(title))
+            if (song.getSongTitle().equals(songTitle))
                 return song;
         }
         return null;
     }
+
+   // public Song searchForSong(String title)
+    //public Song searchForSong(Member artist)
+    //public Song searchForSong(String title, Member artist)
     public int getNewId(){
         return songs.size()+1;
     }

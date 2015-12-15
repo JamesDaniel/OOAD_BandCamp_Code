@@ -9,7 +9,7 @@ import java.util.Set;
 
 
 public class Song{
-    private int songId;
+    final private int songId;
     private String songTitle;
     private Set<Genre> genre;
     private Member artist;
@@ -45,12 +45,6 @@ public class Song{
         return songId;
     }
 
-    /**
-     * @param songId the songId to set
-     */
-    public void setSongId(int songId) {
-        this.songId = songId;
-    } //o/c
 
     /**
      * @return the songTitle

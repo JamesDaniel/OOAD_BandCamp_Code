@@ -12,12 +12,13 @@ public class Song{
     private int songId;
     private String songTitle;
     private Set<Genre> genre;
-    //private Member artist
+    private Member artist;
 
-    public Song(int songId, String songTitle, Set<Genre> genre) { //add artist
+    public Song(int songId, String songTitle, Set<Genre> genre, Member artist) {
         this.songId = songId;
         this.songTitle = songTitle;
         this.genre = genre;
+        this.setArtist(artist);
     }
     @Override
     public String toString(){
@@ -82,4 +83,12 @@ public class Song{
         this.genre = genre;
     }
 
+
+    public Member getArtist() {
+        return artist;
+    }
+
+    public void setArtist(Member artist) {
+        this.artist = artist;
+    }
 }

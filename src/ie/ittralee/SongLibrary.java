@@ -5,9 +5,9 @@
  */
 package ie.ittralee;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -16,8 +16,8 @@ import java.util.Set;
 public class SongLibrary {
     private List<Song> songs;
 
-    public SongLibrary(){
-        songs = new ArrayList<Song>();
+    public SongLibrary(List<Song> songs) {
+        this.songs = songs;
     }
     public void addSong(String title, Set<Genre> genres, Member artist)
     {
@@ -30,50 +30,25 @@ public class SongLibrary {
     }
     public List<Song> searchForSongByTitle(String songTitle)
     {
-        List<Song> foundSongs = new ArrayList();
-        for (Song song: songs)
-        {
-            if (song.getSongTitle().equals(songTitle))
-                foundSongs.add(song);
-        }
-        return foundSongs;
+        return songs.stream().filter(song -> song.getSongTitle().equals(songTitle)).collect(Collectors.toList());
     }
 
 
     public List<Song> searchForSongByArtistName(String artistName){
-        List<Song> foundSongs = new ArrayList();
-        for(Song song: songs)
-        {
-            if(song.getArtist().getMemberName().equals(artistName))
-                foundSongs.add(song);
-        }
-        return foundSongs;
+        return songs.stream().filter(song -> song.getArtist().getMemberName().equals(artistName)).collect(Collectors.toList());
     }
 
     public List<Song> searchForSongByGenre(String genre)
     {
-        List<Song> foundSongs = new ArrayList();
-        for (Song song: songs)
-        {
-            if (song.getGenre().equals(genre)) {
-                foundSongs.add(song);
-            }
-        }
-        return foundSongs;
+        return songs.stream().filter(song -> song.getGenre().toString().equals(genre)).collect(Collectors.toList());
+
     }
 
     public List<Song> searchForSong(String songTitle, String artistName, String genre){
-        List<Song> foundSongs = new ArrayList();
-        for(Song song: songs){
-            if(song.getSongTitle().equals(songTitle)
-                    && song.getArtist().getMemberName().equals(artistName)
-                    && song.getGenre().equals(genre))
-            {
-                foundSongs.add(song);
-            }
-        }
+        return songs.stream().filter(song -> song.getSongTitle().equals(songTitle)
+                && song.getArtist().getMemberName().equals(artistName)
+                && song.getGenre().toString().equals(genre)).collect(Collectors.toList());
 
-        return foundSongs;
     }
 
     private int getNewSongId(){ //rename to getNewSongID and private

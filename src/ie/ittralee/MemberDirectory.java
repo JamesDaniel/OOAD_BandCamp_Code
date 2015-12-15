@@ -5,9 +5,7 @@
  */
 package ie.ittralee;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 /**
  *
@@ -16,8 +14,8 @@ import java.util.Set;
 public class MemberDirectory {
     private List<Member> members;
 
-    public MemberDirectory(){
-        members = new ArrayList<Member>();
+    public MemberDirectory(List<Member> members){
+        this.members = members;
     }
     public void addMember(String name)
     {

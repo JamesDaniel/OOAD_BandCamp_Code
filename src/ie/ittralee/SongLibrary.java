@@ -13,10 +13,10 @@ import java.util.Set;
  *
  * @author SoftwareDev
  */
-public class SongInventory {
+public class SongLibrary {
     private List<Song> songs;
 
-    public SongInventory(){
+    public SongLibrary(){
         songs = new ArrayList<Song>();
     }
     public void addSong(String title, Set<Genre> genres)

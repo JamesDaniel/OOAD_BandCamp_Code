@@ -9,12 +9,12 @@ import java.util.Set;
 
 
 public class Song{
-    private int id;
+    private int songId;
     private String title;
     private Set<Genre> genre;
 
-    public Song(int id, String title, Set<Genre> genre) {
-        this.id = id;
+    public Song(int songId, String title, Set<Genre> genre) {
+        this.songId = songId;
         this.title = title;
         this.genre = genre;
     }
@@ -28,7 +28,7 @@ public class Song{
         genres = genres.substring(0,genres.length()-1);
 
 
-        return "ID: " + id +
+        return "ID: " + songId +
                "\nTitle: " + title +
                "\nGenres: " + genres;
 
@@ -37,17 +37,17 @@ public class Song{
 
 
     /**
-     * @return the id
+     * @return the songId
      */
-    public int getId() {
-        return id;
+    public int getSongId() {
+        return songId;
     }
 
     /**
-     * @param id the id to set
+     * @param songId the songId to set
      */
-    public void setId(int id) {
-        this.id = id;
+    public void setSongId(int songId) {
+        this.songId = songId;
     }
 
     /**

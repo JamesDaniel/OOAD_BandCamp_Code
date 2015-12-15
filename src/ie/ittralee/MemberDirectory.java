@@ -13,10 +13,10 @@ import java.util.Set;
  *
  * @author SoftwareDev
  */
-public class MemberInventory {
+public class MemberDirectory {
     private List<Member> members;
 
-    public MemberInventory(){
+    public MemberDirectory(){
         members = new ArrayList<Member>();
     }
     public void addMember(String name)

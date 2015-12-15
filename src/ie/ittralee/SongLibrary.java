@@ -21,7 +21,7 @@ public class SongLibrary {
     }
     public void addSong(String title, Set<Genre> genres, Member artist)
     {
-        int id = this.getNewId();
+        int id = this.getNewSongId();
         songs.add(new Song(id , title, genres, artist));
     }
     public Song getSong(int id)
@@ -76,7 +76,7 @@ public class SongLibrary {
         return foundSongs;
     }
 
-    public int getNewId(){ //rename to getNewSongID and private
+    private int getNewSongId(){ //rename to getNewSongID and private
         return songs.size()+1;
     }
 

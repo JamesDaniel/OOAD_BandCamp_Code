@@ -15,7 +15,7 @@ import java.util.List;
 public class Member{
 
 
-    private int memId;
+    final private int memId;
     private String memberName;
 
 
@@ -37,13 +37,6 @@ public class Member{
      */
     public int getMemId() {
         return memId;
-    }
-
-    /**
-     * @param memId the memId to set
-     */
-    public void setMemId(int memId) {
-        this.memId = memId;
     }
 
     /**

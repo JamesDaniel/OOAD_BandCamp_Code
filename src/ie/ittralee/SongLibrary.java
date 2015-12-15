@@ -28,36 +28,55 @@ public class SongLibrary {
     {
         return songs.get(id);
     }
-    public Song searchForSongByTitle(String songTitle)
+    public List<Song> searchForSongByTitle(String songTitle)
     {
+        List<Song> foundSongs = new ArrayList();
         for (Song song: songs)
         {
             if (song.getSongTitle().equals(songTitle))
-                return song;
+                foundSongs.add(song);
         }
-        return null;
+        return foundSongs;
     }
 
 
-    public Song searchForSongByArtistName(String artistName){
+    public List<Song> searchForSongByArtistName(String artistName){
+        List<Song> foundSongs = new ArrayList();
         for(Song song: songs)
         {
             if(song.getArtist().getMemberName().equals(artistName))
-                return song;
+                foundSongs.add(song);
         }
-        return null;
+        return foundSongs;
     }
 
-    public Song searchForSong(String songTitle, String artistName){
+    public List<Song> searchForSongByGenre(String genre)
+    {
+        List<Song> foundSongs = new ArrayList();
+        for (Song song: songs)
+        {
+            if (song.getGenre().equals(genre)) {
+                foundSongs.add(song);
+            }
+        }
+        return foundSongs;
+    }
+
+    public List<Song> searchForSong(String songTitle, String artistName, String genre){
+        List<Song> foundSongs = new ArrayList();
         for(Song song: songs){
-            if(song.getSongTitle().equals(songTitle) && song.getArtist().getMemberName().equals(artistName))
-                return song;
+            if(song.getSongTitle().equals(songTitle)
+                    && song.getArtist().getMemberName().equals(artistName)
+                    && song.getGenre().equals(genre))
+            {
+                foundSongs.add(song);
+            }
         }
 
-        return null;
+        return foundSongs;
     }
 
-    public int getNewId(){
+    public int getNewId(){ //rename to getNewSongID and private
         return songs.size()+1;
     }
 
